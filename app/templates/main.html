@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+   </head>
+   <body>
+
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+function Predict(){
+   
+    //postval = JSON.stringify(send in data here);
+    
+    $.post("/predict", postval)
+    .done(function(response) {
+        
+        console.log(response)
+        //do something w response
+        
+    }).fail(function(response) {
+        console.log(response);
+    })      
+}
+    
+    </script>
+</html>
