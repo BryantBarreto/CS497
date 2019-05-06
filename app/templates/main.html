@@ -6,21 +6,22 @@
 </head>
 <body>
     <div class="main-wrapper">
-            <span>Hotdog/Not Hotdog</span>
+            <span>Hotdog/Not Hotdog</span><br>
+            <div id="answer"></div>
             <input type="file"
             id="img" name="img" onchange="previewFile()"
             accept="image/png, image/jpeg"><br>
-            <img src="" alt="Image preview..." height = "400"><br>
+            <img src="" alt="HOWDY" height = "400"><br>
             <button id="predictBtn">HOTDOG?</button><br>
-            <div id="answer"></div>
+            
     </div>
 
 
     <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type=text/javascript>
     document.getElementById("predictBtn").addEventListener ("click", predict, false);
-    window.onload = preload();
 
+    window.onload = preload();
     function preload(){
        
     }
@@ -30,7 +31,7 @@
        var reader  = new FileReader();
 
        reader.onloadend = function () {
-           preview.src = reader.result;
+           preview.src = reader.result; //reader.result is the image itself
        }
 
        if (file) {
@@ -42,7 +43,7 @@
 
     function predict(){
        
-        var imagepath = document.getElementById("img").files[0].name; 
+        //var imagepath = document.getElementById("img").files[0].name; 
         var input = {test: "test"};
         postval = JSON.stringify(input);
         
