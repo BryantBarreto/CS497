@@ -7,11 +7,7 @@ def home():
 
 @app.route('/predict', methods=['POST'])        
 def load():
-   
-    #jsonData = request.get_json(force=True)
-    
-    #image=jsonData['image']
-  
-   
+    jsonData = request.get_json(force=True)
+    test = jsonData['test']
                    
-    return jsonify("return if hotdog here")
+    return jsonify(test)
