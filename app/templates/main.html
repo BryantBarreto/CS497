@@ -11,7 +11,8 @@
             id="img" name="img" onchange="previewFile()"
             accept="image/png, image/jpeg"><br>
             <img src="" alt="Image preview..." height = "400"><br>
-            <button id="predictBtn">HOTDOG?</button>
+            <button id="predictBtn">HOTDOG?</button><br>
+            <div id="answer"></div>
     </div>
 
 
@@ -40,9 +41,8 @@
   }
 
     function predict(){
-        //document.getElementById("fileUploaded").value();
+       
         var imagepath = document.getElementById("img").files[0].name; 
-        console.log(imagepath);
         var input = {test: "test"};
         postval = JSON.stringify(input);
         
@@ -50,6 +50,7 @@
         .done(function(response) {
             
             console.log(response)
+            document.getElementById("answer").innerHTML = response;
             //do something w response
             
         }).fail(function(response) {
